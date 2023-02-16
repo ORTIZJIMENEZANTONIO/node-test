@@ -1,0 +1,27 @@
+{
+  "name": "node-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ORTIZJIMENEZANTONIO/node-test.git",
+  "author": "ORTIZJIMENEZANTONIO <joseantonioescom@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "mocha --timeout 10000 --exit",
+    "format": "prettier --config ./ .prettierrc --write 'scr/**'"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "joi": "^17.7.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.4"
+  }
+}
