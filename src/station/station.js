@@ -17,20 +17,14 @@ const getNextStationPoints = async (req, res) => {
       // Price,
       {
         model: StationCompetitor,
-        where: { distance: {
-          [Op.gt]: 0
-        }},
+        where: {
+          distance: {
+            [Op.gt]: 0
+          }
+        },
         order: [['distance', 'ASC']],
         limit: 5
       }
-      // {
-      //   model: StationCompetitor,
-      //   where: {
-      //     cre_id_competitor: {
-      //       [Op.notIn]: [id]
-      //     }
-      //   }
-      // }
     ]
   }).catch((err) => err);
   return res.json({
