@@ -4,6 +4,7 @@ import pkg from 'body-parser';
 
 // Custom Modules
 import main from './src/main/main.js';
+import station from './src/station/station.js';
 
 /* Variables */
 const app = express();
@@ -30,6 +31,8 @@ app.get('/', (req, res) =>
 
 app.post('/unique-character', main.hasUniqueCharacters);
 app.post('/prime-factors', main.getPrimeFactors);
+app.get('/station-points', station.getNextStationPoints);
+
 
 // Server "up"
 app.listen(PORT, () => console.log(`Running in port ${PORT} ..`));

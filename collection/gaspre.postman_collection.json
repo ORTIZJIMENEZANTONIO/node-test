@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "5496cadc-d532-45f3-a941-b6af5636ba66",
+		"name": "gaspre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6419147"
+	},
+	"item": [
+		{
+			"name": "main",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}",
+					"host": [
+						"{{local}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hasUniqueCharacters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\" : \"golaAg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/unique-character",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"unique-character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPrimeFactors",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"number\": 330\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/prime-factors",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"prime-factors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNextStationPoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/station-points",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"station-points"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost:3000"
+		}
+	]
+}
