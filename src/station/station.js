@@ -1,15 +1,13 @@
-import { promiseQuery } from '../mixins/db-mixins.js';
-import stationModel from '../models/station-model.js';
-import { stationsQry } from './station-query.js';
+const { Station } = require('../models/model-relation');
 
 const getNextStationPoints = async (req, res) => {
   const { id } = req.query;
-  const stations = await stationModel.Station.findByPk(id).catch((err) => err);
+  const stations = await Station.findByPk(id).catch((err) => err);
   return res.json({
     stations
   });
 };
 
-export default {
+module.exports = {
   getNextStationPoints
 };

@@ -1,23 +1,22 @@
-import { Sequelize } from 'sequelize';
+const { Sequelize } = require('sequelize');
 
-import dbConnection from '../../db-connection/db-connection.js';
-import station from './station-model.js';
+const { sequelize } = require('../../db-connection/db-connection.js');
 
-const Price = dbConnection.sequelize.define(
-  'prices  ',
+const Price = sequelize.define(
+  'prices',
   {
     id: {
-      type: Sequelize.NUMBER,
+      type: Sequelize.INTEGER,
       primaryKey: true
     },
     product: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING(20)
     },
     value: {
-      type: Sequelize.STRING
+      type: Sequelize.FLOAT
     },
     cre_id: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING(255)
     },
     date: {
       type: Sequelize.DATE
@@ -28,8 +27,6 @@ const Price = dbConnection.sequelize.define(
   }
 );
 
-Price.belongsTo(station.Station);
-
-export default {
+module.exports = {
   Price
 };

@@ -1,23 +1,22 @@
-import { Sequelize } from 'sequelize';
+const { Sequelize } = require('sequelize');
 
-import dbConnection from '../../db-connection/db-connection.js';
-//import price from './price-model.js';
+const { sequelize } = require('../../db-connection/db-connection.js');
 
-const Station = dbConnection.sequelize.define(
+const Station = sequelize.define(
   'stations',
   {
     cre_id: {
-      type: Sequelize.NUMBER,
+      type: Sequelize.STRING(255),
       primaryKey: true
     },
     name: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING(150)
     },
     location_x: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING(40)
     },
     location_y: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING(40)
     }
   },
   {
@@ -25,8 +24,6 @@ const Station = dbConnection.sequelize.define(
   }
 );
 
-//Station.hasMany(price.Price);
-
-export default {
+module.exports = {
   Station
 };
