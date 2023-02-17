@@ -14,18 +14,14 @@ Price.belongsTo(Station, {
   }
 });
 
-Station.belongsToMany(Brand, { through: 'stations_brands' });
-Brand.belongsToMany(Station, { through: 'stations_brands' });
-
-// Station.hasMany(StationCompetitor, {
-//   sourceKey: 'cre_id',
-//   foreignKey: 'cre_id'
-// });
-// StationCompetitor.belongsTo(Station, {
-//   foreignKey: {
-//     name: 'cre_id'
-//   }
-// });
+Station.belongsToMany(Brand, {
+  through: 'stations_brands',
+  foreignKey: 'cre_id'
+});
+Brand.belongsToMany(Station, {
+  through: 'stations_brands',
+  foreignKey: 'id_brand'
+});
 
 Station.hasMany(StationCompetitor, {
   sourceKey: 'cre_id',
