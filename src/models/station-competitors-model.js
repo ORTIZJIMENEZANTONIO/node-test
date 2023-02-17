@@ -12,7 +12,7 @@ const StationCompetitor = sequelize.define(
     cre_id: {
       type: Sequelize.STRING(255)
     },
-    cre_id_competitors: {
+    cre_id_competitor: {
       type: Sequelize.STRING(255)
     },
     distance: {

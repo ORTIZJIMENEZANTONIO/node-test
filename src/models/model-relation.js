@@ -17,17 +17,25 @@ Price.belongsTo(Station, {
 Station.belongsToMany(Brand, { through: 'stations_brands' });
 Brand.belongsToMany(Station, { through: 'stations_brands' });
 
-Station.hasMany(StationCompetitor, {
-  sourceKey: 'cre_id',
-  foreignKey: 'cre_id'
-});
-StationCompetitor.belongsTo(Station);
+// Station.hasMany(StationCompetitor, {
+//   sourceKey: 'cre_id',
+//   foreignKey: 'cre_id'
+// });
+// StationCompetitor.belongsTo(Station, {
+//   foreignKey: {
+//     name: 'cre_id'
+//   }
+// });
 
 Station.hasMany(StationCompetitor, {
   sourceKey: 'cre_id',
-  foreignKey: 'cre_id_competitors'
+  foreignKey: 'cre_id_competitor'
 });
-StationCompetitor.belongsTo(Station);
+StationCompetitor.belongsTo(Station, {
+  foreignKey: {
+    name: 'cre_id'
+  }
+});
 
 module.exports = {
   Brand,

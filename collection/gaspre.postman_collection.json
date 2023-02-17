@@ -78,12 +78,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{local}}/station-points",
+					"raw": "{{local}}/station-points?id=PL/1000/EXP/ES/2015",
 					"host": [
 						"{{local}}"
 					],
 					"path": [
 						"station-points"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "PL/1000/EXP/ES/2015"
+						}
 					]
 				}
 			},
