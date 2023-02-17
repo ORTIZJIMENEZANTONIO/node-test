@@ -1,3 +1,5 @@
-import { pool } from '../../db-connection/db-connection.js';
+import dbConnection from "../../db-connection/db-connection.js";
 
-export const promiseQuery = (sqlQuery) => pool.query(sqlQuery);
+// import pool from '../../db-connection/db-connection.js';
+
+export const promiseQuery = (sqlQuery) => dbConnection.pool.query(sqlQuery);

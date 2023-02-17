@@ -1,11 +1,13 @@
 import { promiseQuery } from '../mixins/db-mixins.js';
+import stationModel from '../models/station-model.js';
 import { stationsQry } from './station-query.js';
 
-const getNextStationPoints = (req, res) => {
+const getNextStationPoints = async (req, res) => {
   const { id } = req.query;
-  return promiseQuery(stationsQry(id))
-    .then((result) => res.json(result))
-    .catch((err) => console.error(err));
+  const stations = await stationModel.Station.findByPk(id).catch((err) => err);
+  return res.json({
+    stations
+  });
 };
 
 export default {
