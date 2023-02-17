@@ -2,6 +2,8 @@
 import express from 'express';
 import pkg from 'body-parser';
 
+// Custom Modules
+import main from './src/main/main.js';
 
 /* Variables */
 const app = express();
@@ -25,6 +27,9 @@ app.use(pkg.json());
 app.get('/', (req, res) =>
   res.json({ message: 'This is a main route to test' })
 );
+
+app.post('/unique-character', main.hasUniqueCharacters);
+app.post('/prime-factors', main.getPrimeFactors);
 
 // Server "up"
 app.listen(PORT, () => console.log(`Running in port ${PORT} ..`));
