@@ -1,5 +1,5 @@
-import mariadb from 'mariadb';
-import { Sequelize } from 'sequelize';
+const mariadb = require('mariadb');
+const Sequelize = require('sequelize');
 
 const getHost = () =>
   process.env.HOST || 'precios-1.c0f6dm2ucnlg.us-east-2.rds.amazonaws.com';
@@ -29,7 +29,7 @@ const sequelize = new Sequelize(getDB(), getUserDB(), getPassDB(), {
 
 const pool = mariadb.createPool(config);
 
-export default {
+module.exports = {
   pool,
   sequelize
 };

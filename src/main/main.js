@@ -43,7 +43,7 @@ const isPair = (number) => {
   return number % 2 == 0;
 };
 
-export default {
+module.exports = {
   hasUniqueCharacters,
   getPrimeFactors
 };

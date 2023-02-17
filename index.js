@@ -1,10 +1,10 @@
 // Third modules
-import express from 'express';
-import pkg from 'body-parser';
+const express = require('express');
+const bodyParser = require('body-parser');
 
 // Custom Modules
-import main from './src/main/main.js';
-import station from './src/station/station.js';
+const main = require('./src/main/main');
+const station = require('./src/station/station');
 
 /* Variables */
 const app = express();
@@ -22,7 +22,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(pkg.json());
+app.use(bodyParser.json());
 
 // Routes
 app.get('/', (req, res) =>
@@ -33,8 +33,7 @@ app.post('/unique-character', main.hasUniqueCharacters);
 app.post('/prime-factors', main.getPrimeFactors);
 app.get('/station-points', station.getNextStationPoints);
 
-
 // Server "up"
 app.listen(PORT, () => console.log(`Running in port ${PORT} ..`));
 
-export default { app };
+module.exports = { app };

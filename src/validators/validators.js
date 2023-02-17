@@ -1,4 +1,4 @@
-import joi from 'joi';
+const joi = require('joi');
 
 const validateJoiSchema = (body, schema) => {
   new Promise((resolve, reject) => {
@@ -8,6 +8,6 @@ const validateJoiSchema = (body, schema) => {
   });
 };
 
-export default {
+module.exports = {
   validateJoiSchema
 };
