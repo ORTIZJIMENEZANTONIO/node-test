@@ -1,4 +1,4 @@
-import dbConnection from "../../db-connection/db-connection.js";
+import dbConnection from '../../db-connection/db-connection.js';
 
 // import pool from '../../db-connection/db-connection.js';
 
