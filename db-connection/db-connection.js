@@ -1,19 +1,21 @@
-import { createPool } from 'mysql';
+import mariadb from 'mariadb';
 
-const getHost = () => process.env.HOST || 'name';
+const getHost = () =>
+  process.env.HOST || 'precios-1.c0f6dm2ucnlg.us-east-2.rds.amazonaws.com';
 
-const getUser = () => process.env.USER || 'name';
+const getUserDB = () => 'candidatoPrueba';
 
-const getPass = () => process.env.PASS || 'name';
+const getPassDB = () => process.env.PASS || 'gaspre21.M';
 
-const getDataBase = () => process.env.DATABASE || 'name';
+const getDB = () => process.env.DATABASE || 'prueba';
 
-const con = createPool({
-  connectionLimit: 10,
+const data = {
+  connectionLimit: 5,
   host: getHost(),
-  user: getUser(),
-  password: getPass(),
-  database: getDataBase()
-});
+  user: getUserDB(),
+  password: getPassDB(),
+  database: getDB(),
+  port: 3306
+};
 
-export default { con };
+export const pool = mariadb.createPool(data);
