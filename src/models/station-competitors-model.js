@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 
 const { sequelize } = require('../../db-connection/db-connection.js');
 
-const StationsCompetitors = sequelize.define(
+const StationCompetitor = sequelize.define(
   'stations_competitors',
   {
     id: {
@@ -25,5 +25,5 @@ const StationsCompetitors = sequelize.define(
 );
 
 module.exports = {
-  StationsCompetitors
+  StationCompetitor
 };
